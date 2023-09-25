@@ -12,4 +12,42 @@ eq2grau = (a,b,c) => {
     return "x1"+ div (soma(-b, raiz(delta)), mult (2,a)) +
            "x2"+ div (sub(-b, raiz(delta)), mult (2,a));
 } 
-escrever (eq2grau (1,3,-8));
+let a ="";
+let b ="";
+let op ="";
+let resultado = 0;
+let valor = "";
+let tem_ponto = false;
+function mostrar_resultado (resul){
+    document.getElementById ("resultado").value = resul;
+}
+function operacao (nova_op){
+    op = nova_op;
+    a = valor;
+    valor = "";
+}
+function calcula (){
+    if (op != ""){
+        b = valor;
+        valor = "";
+        if (op == "soma") mostrar_resultado (soma(a,b));
+        if (op == "sub") mostrar_resultado (sub(a,b));
+        if (op == "div") mostrar_resultado (div(a,b));
+        if (op == "mult") mostrar_resultado (mult(a,b));
+        a = "";
+        b = "";
+        tem_ponto = false;
+    }
+}
+function digitando(tecla){
+    if (tecla == "."){
+        if (!tem_ponto){
+            valor = valor + tecla;
+            mostrar_resultado (valor);
+            tem_ponto = true;
+            
+        }
+    }
+   valor = valor + tecla;
+   mostrar_resultado (valor);
+}
