@@ -1,9 +1,15 @@
 body {
-    background-color: rgb(66, 6, 122);
+    background-color: rgb(184, 142, 223);
 }
- 
+.entrada {
+    width: 40px;
+    background-color:  rgb(215, 195, 236);
+    border: none;
+    border-bottom: 2px solid rgb(138, 103, 170);
+    text-align: right;
+}
 .calc_simples {
-    background-color: blueviolet;
+    background-color: rgb(117, 75, 156);
     padding: 5px;
     width: 200px;
     border-radius: 5px;
