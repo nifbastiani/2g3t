@@ -8,16 +8,21 @@ eq2grau = (a,b,c) => {
     if (a == 0) return "Não é uma equação do Segundo Grau.";
     let delta = sub(mult(b,b), mult (4, mult (a,c)));
     if (delta < 0) return "Não possui raiz real.";
+
+    document.getElementById ("delta").innerHTML= delta;
+
     if (delta == 0) return "x1 = x2 =" + div(-b, mult (2,a));
     return "x1"+ div (soma(-b, raiz(delta)), mult (2,a)) +
            "x2"+ div (sub(-b, raiz(delta)), mult (2,a));
 } 
-let a ="";
-let b ="";
-let c ="";
+let a ="0";
+let b ="0";
+let c ="0";
+
 let sa = "+";
 let sb = "+";
 let sc = "+";
+
 let op ="";
 let resultado = 0;
 let valor = "";
@@ -96,25 +101,40 @@ function digitando(tecla){
 }
 const set_sinal_a = () =>{
     sa = document.getElementById("sinal_a").value;
+    a= Number (a);
+    a = -a;
     calcular2g();
 }
 const set_sinal_b = () =>{
     sb = document.getElementById("sinal_b").value;
+    b= Number (b);
+    b = -b;
     calcular2g();
 }
 const set_sinal_c = () =>{
     sc = document.getElementById("sinal_c").value;
+    c= Number (c);
+    c = -c;
     calcular2g();
 }
 const set_valor_a = () =>{
     a = document.getElementById("valor_a").value;
+    a = Number(a);
+    if (sa == "-") a = -a;
     calcular2g();
 }
 const set_valor_b = () =>{
     b = document.getElementById("valor_b").value;
+    b = Number(b);
+    if (sb == "-") b = -b;
     calcular2g();
 }
 const set_valor_c = () =>{
     c = document.getElementById("valor_c").value;
+    c = Number(c);
+    if (sc == "-") c = -c;
     calcular2g();
+}
+const calcular2g = ()=>{
+    document.getElementById ("raiz").innerHTML = eq2grau (a,b,c);
 }
