@@ -7,10 +7,10 @@ raiz = a => Math.sqrt(a);
 eq2grau = (a,b,c) => {
     if (a == 0) return "Não é uma equação do Segundo Grau.";
     let delta = sub(mult(b,b), mult (4, mult (a,c)));
-    if (delta < 0) return "Não possui raiz real.";
 
     document.getElementById ("delta").innerHTML= delta;
 
+    if (delta < 0) return "Não possui raiz real.";
     if (delta == 0) return "x1 = x2 =" + div(-b, mult (2,a));
     return "x1"+ div (soma(-b, raiz(delta)), mult (2,a)) +
            "x2"+ div (sub(-b, raiz(delta)), mult (2,a));
@@ -101,20 +101,14 @@ function digitando(tecla){
 }
 const set_sinal_a = () =>{
     sa = document.getElementById("sinal_a").value;
-    a= Number (a);
-    a = -a;
     calcular2g();
 }
 const set_sinal_b = () =>{
     sb = document.getElementById("sinal_b").value;
-    b= Number (b);
-    b = -b;
     calcular2g();
 }
 const set_sinal_c = () =>{
     sc = document.getElementById("sinal_c").value;
-    c= Number (c);
-    c = -c;
     calcular2g();
 }
 const set_valor_a = () =>{
